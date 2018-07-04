@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+
+     <script src="js/jquery-2.1.4.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+
+
+  <style type="text/css">
+    hr{
+    margin-top: 7px;
+    margin-bottom: 7px;
+    }
+  </style>
+</head>
+<body class="row">
+  <span class="glyphicon glyphicon-question-sign" style="font-size: 20px;color: #a1a1a1"></span>
+</h3>
+<hr>
+ <div class="container">
+  <div class="row margin-top-3">
+   <div class="col-sm-6">
+    <h4>候选人信息</h4>
+    <div class="table-responsive">
+     <table class="table table-bordered">
+      <thead>
+       <tr>
+        <th>姓名</th>
+        <th>得票数</th>
+       </tr>
+      </thead>
+      <tbody id="candidate-rows">
+      </tbody>
+     </table>
+    </div>
+   </div>
+   <div class="col-sm-offset-1 col-sm-5">
+    <h4>通证信息</h4>
+    <div class="table-responsive">
+     <table class="table table-bordered">
+      <tr>
+       <th>通证项</th>
+       <th>值</th>
+      </tr>
+      <tr>
+       <td>当前在售通证</td>
+       <td id="tokens-total"></td>
+      </tr>
+      <tr>
+       <td>已售出通证</td>
+       <td id="tokens-sold"></td>
+      </tr>
+      <tr>
+       <td>通证单价</td>
+       <td id="token-cost"></td>
+      </tr>
+      <tr>
+       <td>合约账户余额</td>
+       <td id="contract-balance"></td>
+      </tr>
+     </table>
+    </div>
+   </div>
+  </div>
+  <hr>
+  <div class="row margin-bottom-3">
+   <div class="col-sm-6 form">
+    <h4>参与投票</h4>
+    <div class="alert alert-success" role="alert" id="msg" style="display: none;">投票成功，已更新得票总数</div>
+    <input type="text" id="candidate" class="form-control" placeholder="候选人名称"/>
+    <br>
+    <input type="text" id="vote-tokens" class="form-control" placeholder="投票通证数量"/>
+    <br>
+    <a href="#" id="voter-send"  class="btn btn-primary">发起投票</a>
+   </div>
+   <div class="col-sm-offset-1 col-sm-5">
+    <div class="col-sm-12 form">
+     <h4>购买投票通证</h4>
+     <div class="alert alert-success" role="alert" id="buy-msg" style="display: none;">购买成功，已更新通证数据</div>
+     <div class="input-group">
+      <input type="text" class="form-control" id="buy" placeholder="请输入购买通证数量">
+      <span class="input-group-addon btn btn-primary" id="voter_buyTokens">确认购买</span>
+      </div>
+    </div>
+    <div class="col-sm-12 margin-top-3 form">
+     <h4 class="">查看投票人信息</h4>
+   <!--   <input type="text" id="voter-info", class="col-sm-8" placeholder="请输入投票人地址" /> 
+     &nbsp;<a href="#" onclick="lookupVoterInfo(); return false;" class="btn btn-primary">查看</a> -->
+     <div class="input-group">
+      <input type="text" class="form-control" id="voter-info" placeholder="请输入投票人地址">
+      <span class="input-group-addon btn btn-primary" id='voter-lookup-btn'>查&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;看</span>
+      </div>
+
+     <div class="voter-details row text-left">
+      <div id="tokens-bought" class="margin-top-3 col-md-12"></div>
+      <div id="votes-cast" class="col-md-12"></div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+</body>
+<script src="./app.js"></script>
+</html>

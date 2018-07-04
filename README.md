@@ -9,7 +9,9 @@ ganache-cli Linux版本安装(此处忽略)
 
 命令行如下：
 > truffle compile
+
 > truffle migrate --reset #完全布署
+
 > npm run dev 
 
 联系方式：cxbl1230@qq.com
